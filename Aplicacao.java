@@ -32,11 +32,25 @@ public class Aplicacao {
                     int ano = scan.nextInt();
                     scan.nextLine();
 
-                    Veiculo v = new Veiculo(marca, modelo, placa, ano);
-                    veiculos.add(v);
-                    System.out.println("Veículo cadastrado com sucesso!");
-                    break;
+                    
+                    boolean encontrado = false;
 
+                    for (Veiculo vPlaca : veiculos){
+                        if (vPlaca.getPlaca().equalsIgnoreCase(placa)){
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                    if(encontrado){
+                        System.out.println(placa + " já está na lista.");
+                    }
+                    else{
+                        Veiculo v = new Veiculo(marca, modelo, placa, ano);
+                        veiculos.add(v);
+                        System.out.println("Veículo cadastrado com sucesso!");
+                    }
+                    break;
                 case 2:
                     if (veiculos.isEmpty()) {
                         System.out.println("Nenhum veículo cadastrado.");
