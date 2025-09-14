@@ -19,7 +19,7 @@ public class Veiculo {
         return marca;
     }
 
-    public void setMarca(){
+    public void setMarca(String marca){
         this.marca = marca;
     }
 
@@ -27,21 +27,21 @@ public class Veiculo {
         return modelo;
     }
 
-    public void setModelo(){
+    public void setModelo(String modelo){
         this.modelo = modelo;
     }
     public String getPlaca(){
         return placa;
     }
 
-    public void setPlaca(){
+    public void setPlaca(String placa){
         this.placa = placa;
     }
     public int getano(){
         return ano;
     }
 
-    public void setAno(){
+    public void setAno(int ano){
         this.ano = ano;
     }
 
