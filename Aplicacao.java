@@ -63,6 +63,22 @@ public class Aplicacao {
                 break;
 
                 case 3:
+                System.out.println("Digite a placa do veículo que deseja excluir: ");
+                String placaExcluir = scan.nextLine();
+
+                boolean removido = false;
+                for (Veiculo veiculo : veiculos) {
+                    if (veiculo.getPlaca().equalsIgnoreCase(placaExcluir)) {
+                    veiculos.remove(veiculo);
+                    System.out.println("Veículo removido com sucesso!");
+                    removido = true;
+                break;
+        }
+    }
+
+    if (!removido) {
+        System.out.println("Erro: Nenhum veículo encontrado com essa placa.");
+    }
                     break;
 
                 case 4:
