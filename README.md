@@ -5,3 +5,5 @@ Integrantes:
 
 Gustavo Marcante Vazzoler
 Pedro Henrique Renosto
+Joao Paulo pasolini
+Luis Eduardo Moroso
