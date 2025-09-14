@@ -14,7 +14,8 @@ public class Aplicacao {
             System.out.println("1 - Cadastrar veículo");
             System.out.println("2 - Listar veículos");
             System.out.println("3 - Pesquisar veículos");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Excluir veículos");
+            System.out.println("0 - Sair");
             System.out.print("Escolha: ");
             opcao = scan.nextInt();
             scan.nextLine();
@@ -46,8 +47,14 @@ public class Aplicacao {
                         }
                     }
                 break;
+
                 case 3:
                     break;
+
+                case 4:
+                    break;
+
+                case 0:
 
                 default:
                     break;

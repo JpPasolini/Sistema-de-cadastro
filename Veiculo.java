@@ -46,7 +46,7 @@ public class Veiculo {
     }
 
     public String toString() {
-    return "=== Dados do Veículo ===\n" +
+    return "=== Dados do Veículo ===" +
            "Marca: " + marca + "\n" +
            "Modelo: " + modelo + "\n" +
            "Placa: " + placa + "\n" +
