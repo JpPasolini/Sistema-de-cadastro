@@ -9,8 +9,8 @@ public class Aplicacao {
 
         int opcao = 0;
 
-        while (opcao != 3) {
-            System.out.println("\n=== Menu ===");
+        while (opcao != 4) {
+            System.out.println("=== Menu ===");
             System.out.println("1 - Cadastrar veículo");
             System.out.println("2 - Listar veículos");
             System.out.println("3 - Pesquisar veículos");
@@ -27,6 +27,7 @@ public class Aplicacao {
                     String modelo = scan.nextLine();
                     System.out.println("Placa: ");
                     String placa = scan.nextLine();
+                    System.out.println("Ano: ");
                     int ano = scan.nextInt();
                     scan.nextLine();
 
@@ -39,8 +40,9 @@ public class Aplicacao {
                     if (veiculos.isEmpty()) {
                         System.out.println("Nenhum veículo cadastrado.");
                     } else {
+                        System.out.println("==== Lista de Veículos ====");
                         for (Veiculo veiculo : veiculos) {
-                            System.out.println(veiculo);
+                            System.out.println(veiculo.toString());
                         }
                     }
                 break;
