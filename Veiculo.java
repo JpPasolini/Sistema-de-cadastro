@@ -37,7 +37,7 @@ public class Veiculo {
     public void setPlaca(String placa){
         this.placa = placa;
     }
-    public int getano(){
+    public int getAno(){
         return ano;
     }
 

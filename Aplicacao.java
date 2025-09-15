@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,12 +10,12 @@ public class Aplicacao {
 
         int opcao = 0;
 
-        while (opcao != 4) {
+        while (opcao != 0) {
             System.out.println("=== Menu ===");
             System.out.println("1 - Cadastrar veículo");
             System.out.println("2 - Listar veículos");
-            System.out.println("3 - Pesquisar veículos");
-            System.out.println("4 - Excluir veículos");
+            System.out.println("3 - Excluir veículos");
+            System.out.println("4 - Pesquisa Veículos");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
             opcao = scan.nextInt();
@@ -67,28 +68,70 @@ public class Aplicacao {
                 String placaExcluir = scan.nextLine();
 
                 boolean removido = false;
-                for (Veiculo veiculo : veiculos) {
+                Iterator<Veiculo> it = veiculos.iterator();
+                while (it.hasNext()) {
+                    Veiculo veiculo = it.next();
                     if (veiculo.getPlaca().equalsIgnoreCase(placaExcluir)) {
-                    veiculos.remove(veiculo);
-                    System.out.println("Veículo removido com sucesso!");
-                    removido = true;
-                break;
+                        it.remove();
+                        System.out.println("Veículo removido com sucesso!");
+                        removido = true;
+                        break;
+                    }
+                }
+
+                    if (!removido) {
+                        System.out.println("Nenhum veículo encontrado com a placa: " + placaExcluir);
+                    }
+                        break;
+                
+                case 4: 
+                System.out.println("Deseja pesquisar por Placa ou Modelo? (P/M)");
+                String opcaoPesquisa = scan.nextLine().trim().toUpperCase();
+
+                boolean encontradoPesquisa = false;
+
+                if (opcaoPesquisa.equals("P")) {
+                    System.out.println("Digite a placa do veículo: ");
+                    String placaPesquisa = scan.nextLine();
+
+                    for (Veiculo veiculo : veiculos) {
+                        if (veiculo.getPlaca().equalsIgnoreCase(placaPesquisa)) {
+                            System.out.println(veiculo.toString());
+                            encontradoPesquisa = true;
+                break; 
+            }
         }
-    }
 
-    if (!removido) {
-        System.out.println("Erro: Nenhum veículo encontrado com essa placa.");
-    }
+                } else if (opcaoPesquisa.equals("M")) {
+                    System.out.println("Digite o modelo ou parte do modelo do veículo: ");
+                    String modeloPesquisa = scan.nextLine().toLowerCase();
+                
+                for (Veiculo veiculo : veiculos) {
+                    if (veiculo.getModelo().toLowerCase().contains(modeloPesquisa)) {
+                        System.out.println(veiculo.toString());
+                        encontradoPesquisa = true;
+            }
+         }
+
+                } else {
+                    System.out.println("Opção inválida!");
+            }
+
+                if (!encontradoPesquisa) {
+                    System.out.println("Nenhum veículo encontrado com esses critérios.");
+        }
                     break;
-
-                case 4:
-                    break;
-
+    
+            
                 case 0:
+                    System.out.println("Saindo do programa. Até mais!");
+                    break;
 
                 default:
+                System.out.println("Opção inválida.");
                     break;
             }
         }
     }
 }
+
