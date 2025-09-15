@@ -8,7 +8,7 @@ public class Aplicacao {
         Scanner scan = new Scanner(System.in);
         List<Veiculo> veiculos = new ArrayList<>();
 
-        int opcao = 0;
+        int opcao = -1;
 
         while (opcao != 0) {
             System.out.println("=== Menu ===");
